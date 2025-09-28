@@ -4,6 +4,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Globe as Globe2, Wallet, Menu, X } from 'lucide-react';
+import { useAccount } from "wagmi";
+
 
 interface NavbarProps {
   isMenuOpen: boolean;
@@ -13,6 +15,8 @@ interface NavbarProps {
 }
 
 const Navbar: React.FC<NavbarProps> = ({ isMenuOpen, setIsMenuOpen, scrollY, scrollToSection }) => {
+  const { isConnected } = useAccount();
+
   return (
     <motion.nav
       initial={{ y: -100 }}
@@ -71,8 +75,8 @@ const Navbar: React.FC<NavbarProps> = ({ isMenuOpen, setIsMenuOpen, scrollY, scr
               className="hidden sm:flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full font-semibold hover:shadow-lg hover:shadow-blue-400/30 transition-all duration-300"
             >
               <Wallet className="w-5 h-5" />
-              Connect Wallet
-            </motion.button>
+<w3m-button />            
+</motion.button>
 
             {/* Mobile Menu Button */}
             <motion.button

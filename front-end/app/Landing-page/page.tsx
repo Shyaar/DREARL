@@ -1,13 +1,16 @@
 'use client'
 
 import React, { useState, useEffect } from 'react';
-import Navbar from '@/components/Navbar';
-import Hero from '@/components/Hero';
-import About from '@/components/About';
-import Workflow from '@/components/Workflow';
-import Features from '@/components/Features';
-import Contact from '@/components/Contact';
-import Footer from '@/components/Footer';
+import Navbar from '@/app/components/Navbar';
+import Hero from '@/app/components/Hero';
+import About from '@/app/components/About';
+import Workflow from '@/app/components/Workflow';
+import Features from '@/app/components/Features';
+import Contact from '@/app/components/Contact';
+import Footer from '@/app/components/Footer';
+import ConnectWalletModal from '@/app/components/modals/ConnectWalletModal';
+import RoleSelectionModal from '@/app/components/modals/RoleSelectionModal';
+import RegistrationModal from '@/app/components/modals/RegistrationModal';
 
 function LandingPage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -41,6 +44,10 @@ function LandingPage() {
       <Features />
       <Contact />
       <Footer scrollToSection={scrollToSection} />
+
+      <ConnectWalletModal />
+      <RoleSelectionModal />
+      <RegistrationModal />
     </div>
   );
 }

@@ -5,7 +5,11 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Globe as Globe2, Shield, Lock, Users, Home, Database, ArrowRight, Play } from 'lucide-react';
 
+import { useAppContext } from '@/app/context/ModalContext';
+
 const Hero: React.FC = () => {
+  const { handleGetStarted } = useAppContext();
+
   return (
     <section id="hero" className="relative min-h-screen flex items-center justify-center px-6 pt-20">
       {/* Animated Background */}
@@ -96,6 +100,7 @@ const Hero: React.FC = () => {
             className="flex flex-col sm:flex-row gap-6 mb-12"
           >
             <motion.button
+              onClick={handleGetStarted}
               whileHover={{ scale: 1.05, boxShadow: "0 0 30px rgba(59, 130, 246, 0.5)" }}
               whileTap={{ scale: 0.95 }}
               className="group px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full text-xl font-semibold flex items-center justify-center gap-3 transition-all duration-300"
